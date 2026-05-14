@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForeverBond Matrimony</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">❤</span>
+                <span class="logo-text">ForeverBond</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About us</a>
+                <a href="#">Packages</a>
+                <a href="#">Success stories</a>
+            </nav>
+
+            <div class="auth-buttons">
+                <a href="#" class="signin">Sign in</a>
+                <a href="#" class="register-btn" onclick="showMessage()">Register Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <!-- Slider Images -->
+        <div class="slider">
+            <img src="image (1).png" class="slide active">
+            <img src="image (2).png" class="slide">
+            <img src="image (3).png" class="slide">
+        </div>
+
+        <!-- Overlay Content -->
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 id="mainHeading">Where two hearts find <span>forever</span></h1>
+                <p>Discover meaningful connections built on trust.</p>
+
+
+                <div class="search-box">
+                    <select>
+                        <option>Looking for</option>
+                        <option>Bride</option>
+                        <option>Groom</option>
+                    </select>
+
+                    <select>
+                        <option>Age</option>
+                        <option>18-25</option>
+                        <option>26-30</option>
+                        <option>31-35</option>
+                    </select>
+
+                    <select>
+                        <option>Religion</option>
+                        <option>Hindu</option>
+                        <option>Muslim</option>
+                        <option>Christian</option>
+                    </select>
+
+                    <button onclick="searchAction()">Search</button>
+                </div>
+                <button class="explore-btn" onclick="changeText()">Explore Now</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="about">
+        <div class="about-container">
+
+            <div class="about-image">
+                <img src="241e7af4f4ff665217e9504177413721-removebg-preview.png" alt="Indian Wedding Couple">
+            </div>
+
+            <div class="about-content">
+                <h2>About Us 💖</h2>
+                <p>
+                    We are dedicated to helping individuals find their perfect life partner through a trusted and secure
+                    matrimony platform.
+                    Our goal is to create meaningful connections that lead to happy and successful marriages.
+                </p>
+
+                <p>
+                    With carefully verified profiles and personalized match suggestions, we make your partner search
+                    simple and reliable.
+                    We respect traditions while embracing modern technology to bring people together.
+                </p>
+
+                <p>
+                    Start your journey with us and discover a partner who truly understands and complements you.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Why to Choose Us</h2>
+
+        <div class="feature-box">
+            <div class="feature-card">
+                <h3>✔ Verified Profiles</h3>
+                <p>100% genuine and trusted users</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🔒 Privacy Protection</h3>
+                <p>Your data is completely secure</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💡 Smart Matching</h3>
+                <p>AI-based partner suggestions</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💬 Easy Connect</h3>
+                <p>Chat and connect instantly</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TIMELINE SECTION -->
+    <section class="how-it-works">
+        <h2 class="section-title">How it works</h2>
+
+        <div class="timeline">
+
+            <!-- 1 -->
+            <div class="timeline-row right">
+
+                <div class="icon">
+                    <img src="register.jpg">
+                </div>
+
+                <div class="text">
+                    <h3>Register</h3>
+                    <span class="time">TIMING: 7:00 PM</span>
+                    <p>Create your profile and get started.</p>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="timeline-row left">
+                <div class="text">
+                    <h3>Find your Match</h3>
+                    <span class="time">TIMING: 7:00 PM</span>
+                    <p>Browse profiles that suit your preferences.</p>
+                </div>
+
+                <div class="icon">
+                    <img src="match.jpg">
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="timeline-row right">
+                <div class="icon">
+                    <img src="interest.jpg">
+                </div>
+
+                <div class="text">
+                    <h3>Send Interest</h3>
+                    <span class="time">TIMING: 7:00 PM</span>
+                    <p>Connect with people you like.</p>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="timeline-row left">
+                <div class="text">
+                    <h3>Get Profile Information</h3>
+                    <span class="time">TIMING: 7:00 PM</span>
+                    <p>Know more about your matches.</p>
+                </div>
+
+                <div class="icon">
+                    <img src="profile.png">
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="timeline-row right">
+                <div class="icon">
+                    <img src="meet.jpg">
+                </div>
+
+                <div class="text">
+                    <h3>Start Meetups</h3>
+                    <span class="time">TIMING: 7:00 PM</span>
+                    <p>Take conversations forward.</p>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="timeline-row left">
+                <div class="text">
+                    <h3>Getting Marriage</h3>
+                    <span class="time">TIMING: 7:00 PM</span>
+                    <p>Begin your forever journey ❤️</p>
+                </div>
+
+                <div class="icon">
+                    <img src="marriage.jpg">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing">
+        <h2 class="section-title">Subscription Packages</h2>
+
+        <div class="pricing-cards">
+
+            <!-- Free -->
+            <div class="price-card">
+                <h3>Free</h3>
+                <h1>₹0</h1>
+                <ul>
+                    <li>Create profile</li>
+                    <li>Browse matches</li>
+                    <li>Receive interests</li>
+                </ul>
+                <button class="btn">Start Free</button>
+            </div>
+
+            <!-- Premium -->
+            <div class="price-card premium">
+                <div class="badge">Most Popular</div>
+                <h3>Premium</h3>
+                <h1>₹2,499</h1>
+                <ul>
+                    <li>Unlimited profiles</li>
+                    <li>Send messages</li>
+                    <li>View contact details</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="btn primary">Get Premium</button>
+            </div>
+
+            <!-- Elite -->
+            <div class="price-card">
+                <h3>Elite</h3>
+                <h1>₹6,999</h1>
+                <ul>
+                    <li>Everything in Premium</li>
+                    <li>Personal matchmaker</li>
+                    <li>Profile boost</li>
+                </ul>
+                <button class="btn gold">Go Elite</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SUCCESS STORIES -->
+    <section class="success">
+        <h2 class="section-title">Success stories that began here</h2>
+
+        <div class="stories">
+
+            <div class="story-card">
+                <p>"We found each other within weeks. Forever grateful!"</p>
+                <h4>Priya & Karan</h4>
+            </div>
+
+            <div class="story-card">
+                <p>"The platform made everything simple and secure."</p>
+                <h4>Divya & Aakash</h4>
+            </div>
+
+            <div class="story-card">
+                <p>"Our families connected beautifully. Thank you!"</p>
+                <h4>Sneha & Vikram</h4>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 id="formTitle">Login</h2>
+
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+
+            <button onclick="submitForm()">Submit</button>
+
+            <p id="toggleText">
+                Don't have an account?
+                <span onclick="toggleForm()" class="toggle">Sign Up</span>
+            </p>
+
+            <p onclick="closeModal()" style="color:red;cursor:pointer;">Close</p>
+        </div>
+    </div>
+
+    <section class="final-cta">
+        <h2>Join thousands of happy couples today ❤️</h2>
+        <p>Start your journey towards a meaningful relationship</p>
+        <button onclick="openModal()">Get Started</button>
+    </section>
+
+    <section class="contact">
+        <h2 class="section-title">Contact Us</h2>
+
+        <form onsubmit="handleSubmit(event)" class="contact-form">
+
+            <div class="input-group">
+                <input type="text" id="name" required>
+                <label>Full Name</label>
+                <span class="error" id="nameError"></span>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" required>
+                <label>Email Address</label>
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="input-group">
+                <textarea id="message" required></textarea>
+                <label>Your Message</label>
+                <span class="error" id="msgError"></span>
+            </div>
+
+            <button id="sendBtn">Send Message</button>
+            <p id="formMessage"></p>
+
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h3>ForeverBond</h3>
+                <p>Connecting hearts with trust, tradition, and technology.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#">Matches</a>
+                <a href="#">Pricing</a>
+                <a href="#">Success Stories</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>Email: support@foreverbond.com</p>
+                <p>Phone: +91 98765 43210</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 ForeverBond. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
