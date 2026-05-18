@@ -8,6 +8,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
 
 </head>
@@ -16,73 +17,69 @@
 
     <!-- HEADER -->
     <header class="navbar">
-        <div class="container">
+        <div class="nav-container">
+
             <div class="logo">
                 <span class="logo-icon">❤</span>
                 <span class="logo-text">ForeverBond</span>
             </div>
 
             <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">About us</a>
-                <a href="#">Packages</a>
-                <a href="#">Success stories</a>
+                <a href="#about">About us</a>
+                <a href="#whyus">Why Us</a>
+                <a href="#explore">Explore</a>
+                <a href="#packages">Packages</a>
+                <a href="#success">Success stories</a>
+                <a href="#support">Support</a>
             </nav>
 
             <div class="auth-buttons">
                 <a href="#" class="signin">Sign in</a>
                 <a href="#" class="register-btn" onclick="showMessage()">Register Free</a>
             </div>
+
         </div>
     </header>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero-section container py-5">
+        <div class="row align-items-center">
 
-        <!-- Slider Images -->
-        <div class="slider">
-            <img src="./assets/Images/image (1).png" class="slide active">
-            <img src="./assets/Images/image (2).png" class="slide">
-            <img src="./assets/Images/image (3).png" class="slide">
-        </div>
+            <!-- LEFT TEXT -->
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1>Where two hearts find <span>forever ❤️</span></h1>
 
-        <!-- Overlay Content -->
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h1 id="mainHeading">Where two hearts find <span>forever</span></h1>
-                <p>Discover meaningful connections built on trust.</p>
+                    <p>
+                        ForeverBond verified profiles help you discover trusted
+                        connections and meaningful relationships.
+                    </p>
 
+                    <p>
+                        Secure communication and smart matching designed to help
+                        you begin your beautiful journey.
+                    </p>
 
-                <div class="search-box">
-                    <select>
-                        <option>Looking for</option>
-                        <option>Bride</option>
-                        <option>Groom</option>
-                    </select>
-
-                    <select>
-                        <option>Age</option>
-                        <option>18-25</option>
-                        <option>26-30</option>
-                        <option>31-35</option>
-                    </select>
-
-                    <select>
-                        <option>Religion</option>
-                        <option>Hindu</option>
-                        <option>Muslim</option>
-                        <option>Christian</option>
-                    </select>
-
-                    <button onclick="searchAction()">Search</button>
+                    <div class="hero-buttons">
+                        <button class="explore-btn" onclick="exploreNow()">Explore</button>
+                        <button class="app-btn" onclick="openAppInfo()">Mobile App</button>
+                    </div>
                 </div>
-                <button class="explore-btn" onclick="changeText()">Explore Now</button>
             </div>
-        </div>
 
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-6 text-center">
+                <div class="hero-image-box">
+                    <img src="./assets/Images/image (1).png" alt="Couple" class="img-fluid">
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <section class="about">
+
+
+    <section class="about" id="about">
         <div class="about-container">
 
             <div class="about-image">
@@ -111,7 +108,7 @@
         </div>
     </section>
 
-    <section class="features">
+    <section class="features" id="whyus">
         <h2 class="section-title">Why to Choose Us</h2>
 
         <div class="feature-box">
@@ -139,7 +136,7 @@
 
 
     <!-- TIMELINE SECTION -->
-    <section class="how-it-works">
+    <section class="how-it-works" id="explore">
         <h2 class="section-title">How it works</h2>
 
         <div class="timeline">
@@ -227,7 +224,7 @@
     </section>
 
     <!-- PRICING -->
-    <section class="pricing">
+    <section class="pricing" id="packages">
         <h2 class="section-title">Subscription Packages</h2>
 
         <div class="pricing-cards">
@@ -274,7 +271,7 @@
     </section>
 
     <!-- SUCCESS STORIES -->
-    <section class="success">
+    <section class="success" id="success">
         <h2 class="section-title">Success stories that began here</h2>
 
         <div class="stories">
@@ -321,33 +318,50 @@
         <button onclick="openModal()">Get Started</button>
     </section>
 
-    <section class="contact">
-        <h2 class="section-title">Contact Us</h2>
+    <section class="support-section" id="support">
+        <h2 class="section-title">Need Help? Contact Us</h2>
 
-        <form onsubmit="handleSubmit(event)" class="contact-form">
+        <div class="support-cards">
 
-            <div class="input-group">
-                <input type="text" id="name" required>
-                <label>Full Name</label>
-                <span class="error" id="nameError"></span>
+            <div class="support-card">
+                <h3>📧 Email Support</h3>
+                <p>support@foreverbond.com</p>
+                <p>Available 24/7 for assistance</p>
             </div>
 
-            <div class="input-group">
-                <input type="email" id="email" required>
-                <label>Email Address</label>
-                <span class="error" id="emailError"></span>
+            <div class="support-card">
+                <h3>📞 Call Support</h3>
+                <p>+91 98765 43210</p>
+                <p>Mon - Sat : 9 AM to 7 PM</p>
             </div>
 
-            <div class="input-group">
-                <textarea id="message" required></textarea>
-                <label>Your Message</label>
-                <span class="error" id="msgError"></span>
+        </div>
+
+        <div class="app-download">
+            <h2 class="app-title">💖 Find Your Forever, Anytime Anywhere</h2>
+            <p class="app-subtitle">
+                Take ForeverBond with you — connect, chat and discover your perfect match right from your phone.
+            </p>
+
+            <div class="download-buttons">
+
+                <button class="store-badge" onclick="openAppInfo()">
+                    <i class="fa-brands fa-google-play"></i>
+                    <div class="badge-text">
+                        <span>GET IT ON</span>
+                        <strong>Play Store</strong>
+                    </div>
+                </button>
+
+                <button class="store-badge" onclick="openAppInfo()">
+                    <i class="fa-brands fa-apple"></i>
+                    <div class="badge-text">
+                        <span>Download on the</span>
+                        <strong>App Store</strong>
+                    </div>
+                </button>
+
             </div>
-
-            <button id="sendBtn">Send Message</button>
-            <p id="formMessage"></p>
-
-        </form>
     </section>
 
     <!-- FOOTER -->

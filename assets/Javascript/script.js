@@ -1,4 +1,15 @@
+function openAppInfo() {
+    alert("ForeverBond Mobile App launching soon ❤️");
+}
 
+function exploreNow() {
+    const aboutSection = document.querySelector(".about");
+    if (aboutSection) {
+        aboutSection.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+}
     // Change Hero Text
     function changeText() {
         document.getElementById("mainHeading").innerText =
