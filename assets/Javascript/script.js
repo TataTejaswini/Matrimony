@@ -3,63 +3,71 @@ function openAppInfo() {
 }
 
 function exploreNow() {
-    const aboutSection = document.querySelector(".about");
-    if (aboutSection) {
-        aboutSection.scrollIntoView({
-            behavior: "smooth"
-        });
+    const section = document.getElementById("explore");
+    if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
     }
 }
-    // Change Hero Text
-    function changeText() {
-        document.getElementById("mainHeading").innerText =
-            "Welcome to ForeverBond 💖";
-    }
 
-    // Register Button Click
-    function showMessage() {
-        alert("Registration feature coming soon 💍");
-    }
+function showMessage() {
+    alert("Registration feature coming soon 💍");
+}
 
-    // Search Button Action
-    function searchAction() {
-        alert("Searching matches... 🔍");
-    }
+function searchAction() {
+    alert("Searching matches... 🔍");
+}
 
+function openModal() {
+    document.getElementById("modal").style.display = "flex";
+}
 
-    // DOM + Event: Change text
-    function changeText() {
-        document.getElementById("mainHeading").innerText =
-            "Welcome to ForeverBond 💖";
-    }
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
 
-    // Event: Register button
-    function showMessage() {
-        alert("Registration feature coming soon 💍");
-    }
+let isLogin = true;
 
-    // Event + DOM: Search button
-    function searchAction() {
-        alert("Searching matches... 🔍");
-    }
+function toggleForm() {
+    isLogin = !isLogin;
+    document.getElementById("formTitle").innerText = isLogin ? "Login" : "Sign Up";
+}
 
+function submitForm() {
+    alert(isLogin ? "Login successful!" : "Signup successful!");
+    closeModal();
+}
 
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-        let slides = document.querySelectorAll(".slide");
-        let index = 0;
+    /* COUNTER */
+    const counters = document.querySelectorAll(".counter");
 
-        function showSlide() {
-            slides.forEach(slide => slide.classList.remove("active"));
-            slides[index].classList.add("active");
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute("data-target"));
+        let count = 0;
 
-            index = (index + 1) % slides.length;
-        }
+        const updateCounter = () => {
+            const increment = Math.ceil(target / 100);
 
-        setInterval(showSlide, 3000);
+            if (count < target) {
+                count += increment;
 
+                if (count > target) count = target;
+
+                if (target === 97) {
+                    counter.innerText = count + "%";
+                } else {
+                    counter.innerText = count + "+";
+                }
+
+                setTimeout(updateCounter, 30);
+            }
+        };
+
+        updateCounter();
     });
 
+    /* SECTION FADE */
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -68,139 +76,33 @@ function exploreNow() {
         });
     });
 
-    document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+    document.querySelectorAll("section").forEach(section => {
+        section.classList.add("fade-in");
+        observer.observe(section);
+    });
 
-    function openModal() {
-        document.getElementById("modal").style.display = "flex";
-    }
+    /* NAV ACTIVE */
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
 
-    function closeModal() {
-        document.getElementById("modal").style.display = "none";
-    }
+    window.addEventListener("scroll", () => {
+        let current = "";
 
-    let isLogin = true;
+        sections.forEach(section => {
+            const top = section.offsetTop;
 
-    function toggleForm() {
-        isLogin = !isLogin;
-        document.getElementById("formTitle").innerText = isLogin ? "Login" : "Sign Up";
-    }
-
-    function submitForm() {
-        alert(isLogin ? "Login successful!" : "Signup successful!");
-        closeModal();
-    }
-
-    function handleSubmit(event) {
-        event.preventDefault();
-
-        const btn = document.getElementById("sendBtn");
-        const msg = document.getElementById("formMessage");
-
-        const name = document.querySelector("input[type='text']").value;
-        const email = document.querySelector("input[type='email']").value;
-        const message = document.querySelector("textarea").value;
-
-        if (!name || !email || !message) {
-            msg.innerText = "Please fill all fields!";
-            msg.style.color = "red";
-            return;
-        }
-
-        // Loading state
-        btn.innerText = "Sending...";
-        btn.disabled = true;
-
-        // Simulate API call
-        setTimeout(() => {
-            msg.innerText = "Message sent successfully! ✅";
-            msg.style.color = "green";
-
-            btn.innerText = "Send Message";
-            btn.disabled = false;
-
-            event.target.reset();
-        }, 1500);
-    }
-
-    function handleSubmit(event) {
-        event.preventDefault();
-
-        let isValid = true;
-
-        const name = document.getElementById("name");
-        const email = document.getElementById("email");
-        const message = document.getElementById("message");
-
-        const nameError = document.getElementById("nameError");
-        const emailError = document.getElementById("emailError");
-        const msgError = document.getElementById("msgError");
-
-        // Reset errors
-        nameError.innerText = "";
-        emailError.innerText = "";
-        msgError.innerText = "";
-
-        // Name validation
-        if (name.value.trim().length < 3) {
-            nameError.innerText = "Enter valid name";
-            isValid = false;
-        }
-
-        // Email validation
-        if (!email.value.includes("@")) {
-            emailError.innerText = "Enter valid email";
-            isValid = false;
-        }
-
-        // Message validation
-        if (message.value.trim().length < 5) {
-            msgError.innerText = "Message too short";
-            isValid = false;
-        }
-
-        if (!isValid) return;
-
-        const btn = document.getElementById("sendBtn");
-        const formMsg = document.getElementById("formMessage");
-
-        btn.innerText = "Sending...";
-        btn.disabled = true;
-
-        setTimeout(() => {
-            formMsg.innerText = "Message sent successfully ✅";
-            formMsg.style.color = "green";
-
-            btn.innerText = "Send Message";
-            btn.disabled = false;
-
-            event.target.reset();
-        }, 1500);
-    }
-
-    // COUNTER ANIMATION
-const counters = document.querySelectorAll('.counter');
-
-counters.forEach(counter => {
-    counter.innerText = '0';
-
-    const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        const current = +counter.innerText;
-
-        const increment = target / 100;
-
-        if (current < target) {
-            counter.innerText = `${Math.ceil(current + increment)}`;
-            setTimeout(updateCounter, 20);
-        } else {
-            // ADD + OR %
-            if (target === 97) {
-                counter.innerText = target + "%";
-            } else {
-                counter.innerText = target + "+";
+            if (window.pageYOffset >= top - 150) {
+                current = section.getAttribute("id");
             }
-        }
-    };
+        });
 
-    updateCounter();
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+
+            if (link.getAttribute("href").includes(current)) {
+                link.classList.add("active");
+            }
+        });
+    });
+
 });
